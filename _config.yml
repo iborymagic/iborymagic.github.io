@@ -106,4 +106,3 @@ exclude:
   - README.md
   - CNAME
 
-google_fonts : "Noto+Sans+KR:400,700"
