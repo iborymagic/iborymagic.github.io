@@ -16,10 +16,10 @@ const nextDate = new Date(${오늘 날짜 객체}.setDate(${오늘 날짜 객체
 ```
 
 ### componentDidMount()
-component가 마운트된 직후, 즉 트리에 삽입된 직후에 호출.  
+component가 마운트된 직후, 즉 <u>트리에 삽입된 직후에 호출된다.</u>  
 화면을 처음 불러올 때 setState로 값을 설정하고 싶을 때 이용하는 듯.  
 
-아마, DOM 노드가 필요한 초기화 작업을 얘한테서 해주면 될 듯 하다.  
+아마, <u>DOM 노드가 필요한 초기화 작업</u>을 얘한테서 해주면 될 듯 하다.  
 
 얘는 기본적으로 render() 다음에 호출되는데,  
 setState를 호출하면 render()가 한 번 더 호출되기 때문에  
@@ -70,8 +70,8 @@ if(!value) {
 }
 ```
 요렇게 체크해주면 된다.  
-자바스크립트 자료형에서 "", null, undefined, 0, NaN이  
-전부 false로 반환된다는 점을 이용한 체크 방법.  
+자바스크립트 자료형에서 <u>"", null, undefined, 0, NaN</u>이  
+<u>전부 false</u>로 반환된다는 점을 이용한 체크 방법.  
 
 추가) [출처](https://sanghaklee.tistory.com/3)  
 만약 들어올 수 있는 자료형 중에서  
