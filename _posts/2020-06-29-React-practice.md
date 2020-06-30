@@ -7,7 +7,9 @@ tags:
 ---
 
 ### Javascript의 Date 객체로 어제, 내일 구하기
-하루 이전, 이후의 날짜 객체 구하기
+Javascript의 Date 객체를 이용하면  
+하루 이전, 이후의 날짜 객체를 간단히 구할 수 있음.  
+
 ```javascript
 const prevDate = new Date(${오늘 날짜 객체}.setDate(${오늘 날짜 객체}.getDate() - 1));
 const nextDate = new Date(${오늘 날짜 객체}.setDate(${오늘 날짜 객체}.getDate() + 1));
