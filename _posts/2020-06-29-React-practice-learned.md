@@ -98,5 +98,6 @@ var isEmpty = function(value){
 - `git add .` : 변경 사항들을 stage에 올려놓는다.
 - `git commit -m "커밋 메시지"` : 변경 사항들을 커밋
 - `git remote add origin "원격 저장소 주소"` : 원격 저장소와 연동하는 명령어. 얘도 처음에 한 번만.
-- `git push -u origin master` or `git push` : (master branch에다가 혹은 그냥) push
+- `git push -u origin master` or `git push` : (master branch에다가 혹은 그냥) push  
+
 [git을 이용한 workflow를 잘 설명해놓은 블로그](https://wordbe.tistory.com/entry/Git-%EC%82%AC%EC%9A%A9-%EB%B0%A9%EB%B2%95-%EC%A0%95%EB%A6%ACcommit-push-pull-request-merge-%EB%93%B1)
