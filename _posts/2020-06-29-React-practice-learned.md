@@ -97,9 +97,9 @@ var isEmpty = function(value){
 - `git init`
 : git을 개시하는 명령어. 맨 처음에 한 번만 해주면 됨.
 - `git add .`
-: 새로 추가한 파일들을 올린다.
+: 변경 사항들을 stage에 올려놓는다.
 - `git commit -m "커밋 메시지"`
-: 파일의 변경사항을 커밋
+: 변경 사항들을 커밋
 - `git remote add origin "원격 저장소 주소"`
 : 원격 저장소와 연동하는 명령어. 얘도 처음에 한 번만.
 - `git push -u origin master` or `git push`
