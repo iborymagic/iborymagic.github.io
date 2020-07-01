@@ -90,5 +90,18 @@ var isEmpty = function(value){
 
 ```
 
-
-
+### Github 원격저장소
+1. github에 저장소 새로 만들기
+2. github 저장소 주소 클립보드에 복사해두기
+3. 프로젝트 폴더로 간다.
+- `git init`
+: git을 개시하는 명령어. 맨 처음에 한 번만 해주면 됨.
+- `git add .`
+: 새로 추가한 파일들을 올린다.
+- `git commit -m "커밋 메시지"`
+: 파일의 변경사항을 커밋
+- `git remote add origin "원격 저장소 주소"`
+: 원격 저장소와 연동하는 명령어. 얘도 처음에 한 번만.
+- `git push -u origin master` or `git push`
+: (master branch에다가 혹은 그냥) push
+[git을 이용한 workflow를 잘 설명해놓은 블로그](https://wordbe.tistory.com/entry/Git-%EC%82%AC%EC%9A%A9-%EB%B0%A9%EB%B2%95-%EC%A0%95%EB%A6%ACcommit-push-pull-request-merge-%EB%93%B1)
