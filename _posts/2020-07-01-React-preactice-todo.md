@@ -30,7 +30,7 @@ TODO LIST를 만들어야겠다는 생각을 하자마자 기억이 번뜩 떠�
 감사하게도 너무나 흔쾌히 허락을 해주셔서 작업을 신속하게 시작할 수 있었다.  
 
 ![img1](../img/jihyeleee todolist.png)
-<small>좌측이 원본, 우측이 결과물.</small>  
+<i>좌측이 원본, 우측이 결과물.</i>  
 
 이름을 Daily-Todos로 정한 이유는..  
 원본의 디자인 상단에 보면 Day, Week, Month, Year로 기능이 나눠져 있다.  
@@ -118,7 +118,7 @@ const newID = Math.random().toString(36).substr(2, 9);
 소름이 돋았다 아주 그냥  
 
 ![img2](../img/todolist2.png)
-<small>테스트 단계라 디자인이 좀 다르다.</small>  
+<i>테스트 단계라 디자인이 좀 다르다.</i>  
 
 pin기능은 마지막에 버그를 발견해서 조금 머리가 아팠다.  
 사실 뭐 그렇게 복잡한 건 아니었지만, 그냥 배포하기 직전에 발견되니까  
