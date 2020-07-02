@@ -4,6 +4,7 @@ title: React 실습하며 배운 내용들
 tags:
   - TIL
   - react
+  - github
 ---
 
 ### Javascript의 Date 객체로 어제, 내일 구하기
@@ -101,3 +102,22 @@ var isEmpty = function(value){
 - `git push -u origin master` or `git push` : (master branch에다가 혹은 그냥) push  
 
 [git을 이용한 workflow를 잘 설명해놓은 블로그](https://wordbe.tistory.com/entry/Git-%EC%82%AC%EC%9A%A9-%EB%B0%A9%EB%B2%95-%EC%A0%95%EB%A6%ACcommit-push-pull-request-merge-%EB%93%B1)
+
+### git push 오류 발생 시 해결 방법
+```
+error: failed to push some refs to 'https://github.com/iborymagic/react-todo.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
+
+요런 오류가 뜰 때의 해결 방법.  
+그냥 간단하게, `git pull origin master`를 한 후에 다시 `git push`를 해주면 된다.  
+저런 에러가 뜨는 이유는, 내가 원격 저장소에다가 파일을 업로드해놓고  
+거기에서 README.md 파일을 새로 생성했기 때문.  
+
+원격 저장소에는 있는 파일이 내 컴퓨터에는 없기 때문에 에러가 발생하는 것.  
+`git pull origin master`로 master branch의 파일들을 가져와서 합친 후에  
+다시 push를 해주면 아무 이상없이 잘 push되는 것을 볼 수 있다.  
