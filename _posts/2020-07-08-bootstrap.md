@@ -47,4 +47,4 @@ Validation 검사라던가, 그런 것들이 굉장히 유용하니 기억해뒀
 `Accordion`  
 `Carousel`  
  
-http://bootstrapk.com/components/  
+[Bootstrap 한글문서](http://bootstrapk.com/components/)  
