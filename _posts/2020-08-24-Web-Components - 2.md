@@ -7,7 +7,7 @@ tags:
   - Web Components
 ---
 ### Custom Element의 몇 가지 규칙
-1. 사용자 설정 요소의 이름에는 대시(-)가 포함되어야 한다.
+1. 사용자 설정 요소의 이름에는 대시(-)가 포함되어야 한다.  
 &lt;x-tags&gt;, &lt;my-element&gt;, &lt;my-awesome-app&gt; 등은 모두 유효한 이름이지만
 &lt;tabs&gt;, &lt;foo_bar&gt;는 유효하지 않은 이름이다.
 일반 HTML 태그 요소와 사용자 설정 요소를 구분하기 위함.
@@ -42,13 +42,14 @@ click() 메서드와 같은 각종 DOM 속성/메서드들이 전부 상속된�
 사용자 설정 요소에는 속성을 추가할 수 있다고 했었다.  
 정확하진 않지만, 아마 속성마다 getter/setter 메소드를 만들어야 해당 클래스 내부에서  
 this.count 이런식으로 그 속성에 접근할 수 있는 권한이 생기는 것 같다.  
-(getter/setter 메소드를 주석처리 하고 나니, this.count를 통해   
-count 속성을 변경하거나 읽는 모든 작업이 돌아가지 않았다.)  
+<i>(getter/setter 메소드를 주석처리 하고 나니, this.count를 통해</i>   
+<i>count 속성을 변경하거나 읽는 모든 작업이 돌아가지 않았다.)</i>  
 getter/setter가 필드 변수를 선언해주는 작업이라고 생각하면 될 듯.  
+-> 이건 자바스크립트 클래스 기능의 특징이었다.  
 
 그리고 `static get observedAttributes()` 라는 메소드가 있다.  
-브라우저는 observedAttributes가 return하는 배열에 나열된 속성들 중 하나가 변경될 때마다  
-attributeChangedCallback()이라는 메소드를 호출한다.  
+<i>브라우저는 observedAttributes가 return하는 배열에 나열된 속성들 중 하나가 변경될 때마다</i>  
+<i>attributeChangedCallback()이라는 메소드를 호출한다.</i>  
 (누군가가 setAttribute를 호출하면 그 즉시 attributeChangedCallback이 호출되고. 이런 식)  
 
 그렇기 때문에, 속성이 변경되었을 때 뭔가 작업을 해주고 싶다면,  
@@ -57,8 +58,9 @@ observedAttributes() 메소드가 return하는 배열에 넣어주면 된다.
 
 참고로, 해당 element의 모든 instance들이 속성에 관한 설정을 공유해야하기 때문에  
 (속성에 관해 정의하면 그 내용이 모든 instance들에게 적용이 되어야 하기 때문에)  
-observedAttributes() 메소드는 static 메소드로 선언해줘야한다고 함.  
+<b>observedAttributes() 메소드는 static 메소드로 선언해줘야한다고 함.</b>  
 
+```
 
 대충 이정도까지이고, 이전에 배웠던 내용처럼  
 element 내부에 shadow DOM을 만들어주고, 거기에 template 태그를 추가해서  
