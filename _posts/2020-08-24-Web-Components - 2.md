@@ -89,3 +89,4 @@ property(태그 속성)를 만들 때마다 getter/setter 메소드도 일일이
 [a shot of code 유튜브](https://www.youtube.com/watch?v=vLkPBj9ZaU0)  
 [Google Developer : Web Fundamentals - Custom elements](https://developers.google.com/web/fundamentals/web-components/customelements?hl=ko)  
 [Google Developer : Web Fundamentals - Shadow DOM](https://developers.google.com/web/fundamentals/web-components/shadowdom#styling)  
+[WIT 블로그 : Shadow DOM은 무엇일까?](https://wit.nts-corp.com/2019/03/27/5552)  
