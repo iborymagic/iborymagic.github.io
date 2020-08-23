@@ -8,8 +8,8 @@ tags:
 ---
 ### Custom Element의 몇 가지 규칙
 1. 사용자 설정 요소의 이름에는 대시(-)가 포함되어야 한다.  
-&lt;x-tags&gt;, &lt;my-element&gt;, &lt;my-awesome-app&gt; 등은 모두 유효한 이름이지만
-&lt;tabs&gt;, &lt;foo_bar&gt;는 유효하지 않은 이름이다.
+&lt;x-tags&gt;, &lt;my-element&gt;, &lt;my-awesome-app&gt; 등은 모두 유효한 이름이지만  
+&lt;tabs&gt;, &lt;foo_bar&gt;는 유효하지 않은 이름이다.  
 일반 HTML 태그 요소와 사용자 설정 요소를 구분하기 위함.
 2. 동일한 태그를 두 번 이상 등록할 수 없다. DOMException이 발생함.
 3. 항상 닫는 태그를 작성해줄 것(&lt;app-drawer&gt;&lt;/app-drawer&gt;)
@@ -134,8 +134,8 @@ element 내부에 shadow DOM을 만들어주고, 거기에 template 태그를 �
 property(태그 속성)를 만들 때마다 getter/setter 메소드도 일일이 만들어줘야 하고..  
 
 그래서 React나 Vue와 같은 프레임워크들이 각광을 받고있는 것이 아닐까.  
-별도로 사용하고싶지는 않은 기능이지만, React나 Vue와 같은 프레임워크들이  
-그 뒷면에서는 어떤 식으로 동작을 하고 있는지를 이해하기에 좋은 공부가 아니었나 싶다.  
+별도로 사용하고싶지는 않은 기능이지만, <b>React나 Vue와 같은 프레임워크들이</b>  
+<b>그 뒷면에서는 어떤 식으로 동작을 하고 있는지를 이해하기에 좋은 공부가 아니었나 싶다.</b>  
 
 +) bind(this)는 정말 자주 쓰이는 패턴.  
 자바스크립트에서, 콜백함수는 클래스 내부의 메소드에서 사용되더라도  
@@ -143,8 +143,8 @@ property(태그 속성)를 만들 때마다 getter/setter 메소드도 일일이
 그래서, 클래스 메소드의 콜백 함수에서 this를 사용해줘도 해당 클래스가 아닌 window 객체를 가리키게 된다.  
 콜백 함수는 선언되는 위치에 바인딩되는 게 아닌가보다(window로 바인딩된다).   
 
-여튼, 그래서 콜백함수 내부에서 this가 해당 클래스를 가리키게 하려면  
-콜백함수의 정의가 끝나고, 밖에서 bind(this)를 통해 클래스를 this로 바인딩해줘야 한다.  
+여튼, 그래서 <b>콜백함수 내부에서 this가 해당 클래스를 가리키게 하려면</b>  
+<b>콜백함수의 정의가 끝나고, 밖에서 bind(this)를 통해 클래스를 this로 바인딩해줘야 한다.</b>  
 
 [a shot of code 유튜브](https://www.youtube.com/watch?v=vLkPBj9ZaU0)  
 [Google Developer : Web Fundamentals - Custom elements](https://developers.google.com/web/fundamentals/web-components/customelements?hl=ko)  
