@@ -10,6 +10,10 @@ React, Vue 등의 라이브러리나 프레임워크를 사용하지 않고도
 VanillaJS만으로 페이지 요소들을 Web Components로 분해할 수 있는 기능이 있다.  
 내가 본 유튜브 강좌에선 'Custom, Reusable and Encapsulated HTML Tags'라고 소개함.  
 
+사실 내가 사용했던 React(Virtual DOM + JSX)가 사용성도 그렇고 모든 측면에서  
+더 편리하고 좋다는 생각이 들지만, 일단 대부분의 프레임워크에서 공통적으로  
+사용되는 컨셉이니만큼, VanillaJS로 다루는 법도 공부해두면 꽤나 유익하지 않을까 싶어서.  
+
 # Web components를 구성하는 3가지 주요 키워드
 1. Custom Elements
 2. Shadow DOM
