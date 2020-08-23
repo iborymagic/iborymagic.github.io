@@ -41,13 +41,15 @@ click() 메서드와 같은 각종 DOM 속성/메서드들이 전부 상속된�
 ### 속성(Attribute)
 사용자 설정 요소에는 속성을 추가할 수 있다고 했었다.  
 정확하진 않지만, 아마 속성마다 getter/setter 메소드를 만들어야 해당 클래스 내부에서  
-그 속성에 접근할 수 있는 권한이 생기는 것 같다.  
-(getter/setter 메소드를 주석처리 하고 나니,   
-해당 속성을 변경하거나 읽는 모든 작업이 돌아가지 않았다.)  
+this.count 이런식으로 그 속성에 접근할 수 있는 권한이 생기는 것 같다.  
+(getter/setter 메소드를 주석처리 하고 나니, this.count를 통해   
+count 속성을 변경하거나 읽는 모든 작업이 돌아가지 않았다.)  
+getter/setter가 필드 변수를 선언해주는 작업이라고 생각하면 될 듯.  
 
 그리고 `static get observedAttributes()` 라는 메소드가 있다.  
 브라우저는 observedAttributes가 return하는 배열에 나열된 속성들 중 하나가 변경될 때마다  
 attributeChangedCallback()이라는 메소드를 호출한다.  
+(누군가가 setAttribute를 호출하면 그 즉시 attributeChangedCallback이 호출되고. 이런 식)  
 
 그렇기 때문에, 속성이 변경되었을 때 뭔가 작업을 해주고 싶다면,  
 그 작업을 attributeChangedCallback() 메소드에다가 정의해 준 다음에 해당 속성을  
