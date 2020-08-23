@@ -44,13 +44,73 @@ click() 메서드와 같은 각종 DOM 속성/메서드들이 전부 상속된�
 this.count 이런식으로 그 속성에 접근할 수 있는 권한이 생기는 것 같다.  
 <i>(getter/setter 메소드를 주석처리 하고 나니, this.count를 통해</i>   
 <i>count 속성을 변경하거나 읽는 모든 작업이 돌아가지 않았다.)</i>  
+
 getter/setter가 필드 변수를 선언해주는 작업이라고 생각하면 될 듯.  
 -> 이건 자바스크립트 클래스 기능의 특징이었다.  
 
+```javascript
+class MyCounter extends HTMLElement {
+    constructor() {
+        super();
+        this.shadow = this.attachShadow({ mode : "open" });
+    }
+
+    get count() {
+        return this.getAttribute('count');
+        // count attribute에 관한 getter 메소드.
+    }
+
+    set count(val) {
+        this.setAttribute('count', val);
+    }
+    // 이 getter/setter 메소드를 통해 this.count라는 식으로 count 변수에 접근이 가능해지는 듯.
+
+    static get observedAttributes() {
+        // 브라우저는 observedAttributes가 return하는 배열에 나열된 속성이 변경될 때마다
+        // attributeChangedCallback()을 호출한다.
+
+        // my-counter 태그의 모든 instance들이 attributes에 관한 속성을 공유해야하기 때문에 static으로 지정.
+        return ["count"];
+    }
+
+    attributeChangedCallback(prop, oldVal, newVal) {
+        // observedAttributes()에 나열된 속성이 변경될 때마다(ex : setAttribute) 어떤 작업을 해줄 것인가.
+        if(prop === 'count') {
+            this.render();
+            const btn = this.shadow.querySelector('#btn')
+            btn.addEventListener('click', this.inc.bind(this));
+            // count 속성에 변화가 생기면 이러이러한 작업을 해줘라.
+        }
+    }
+
+    inc() {
+        this.count++;
+    }
+
+    connectedCallback() {
+        this.render();
+        const btn = this.shadow.querySelector('#btn')
+        btn.addEventListener('click', this.inc.bind(this));
+        // 클래스 메소드의 콜백함수에서 this가 해당 클래스를 가리키게 하려면, 바깥에서 this를 바인딩해줘야 한다.
+        // 안 그러면 콜백함수의 this는 window 객체를 가리키기 때문.
+    }
+
+    render() {
+        this.shadow.innerHTML = `
+            <h1>Counter</h1>
+            ${this.count}
+            <button id='btn'>Increment</button>
+        `
+    }
+}
+
+customElements.define("my-counter", MyCounter);
+```
+
 그리고 `static get observedAttributes()` 라는 메소드가 있다.  
-<i>브라우저는 observedAttributes가 return하는 배열에 나열된 속성들 중 하나가 변경될 때마다</i>  
-<i>attributeChangedCallback()이라는 메소드를 호출한다.</i>  
-(누군가가 setAttribute를 호출하면 그 즉시 attributeChangedCallback이 호출되고. 이런 식)  
+브라우저는 observedAttributes가 return하는 배열에 나열된 속성들 중 하나가 변경될 때마다  
+attributeChangedCallback()이라는 메소드를 호출한다.  
+<i>(누군가가 setAttribute를 호출하면 그 즉시 attributeChangedCallback이 호출되고. 이런 식)</i>  
 
 그렇기 때문에, 속성이 변경되었을 때 뭔가 작업을 해주고 싶다면,  
 그 작업을 attributeChangedCallback() 메소드에다가 정의해 준 다음에 해당 속성을  
@@ -60,7 +120,7 @@ observedAttributes() 메소드가 return하는 배열에 넣어주면 된다.
 (속성에 관해 정의하면 그 내용이 모든 instance들에게 적용이 되어야 하기 때문에)  
 <b>observedAttributes() 메소드는 static 메소드로 선언해줘야한다고 함.</b>  
 
-```
+***
 
 대충 이정도까지이고, 이전에 배웠던 내용처럼  
 element 내부에 shadow DOM을 만들어주고, 거기에 template 태그를 추가해서  
