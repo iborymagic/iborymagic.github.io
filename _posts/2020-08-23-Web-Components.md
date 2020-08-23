@@ -17,6 +17,7 @@ VanillaJS만으로 페이지 요소들을 Web Components로 분해할 수 있는
 
 ### Custom elements
 * Create custom HTML tags  
+
 ```javascript
 // 정의
 class AppDrawer extends HTMLElement { ... }
@@ -24,25 +25,25 @@ window.customElements.define('app-drawer', AppDrawer);
 ```  
 
 ```html
-// 사용
+<!-- 사용 -->
 <app-drawer></app-drawer>
 ```
 * Create Custom class
 * Lifecycle methods available  
-- constructor() : Called when an instance of the element is created or upgraded  
+※ constructor() : Called when an instance of the element is created or upgraded  
 initialize, add event listeners, etc.  
 element의 인스턴스가 생성되거나 갱신될 때 호출되는 메소드.  
 초기화 작업이나, 이벤트 리스너를 추가하는 등의 용도로 사용.  
 
-- connectedCallback() : Called every time when the element is inserted into the DOM  
+※ connectedCallback() : Called every time when the element is inserted into the DOM  
 element가 DOM에 삽입될 때 호출되는 메소드  
 
-- disconnectedCallback() : Called every time the element is removed from the DOM  
+※ disconnectedCallback() : Called every time the element is removed from the DOM  
 remove event listeners  
 element가 DOM에서 삭제될 때 호출되는 메소드.  
 주로 이벤트 리스너를 제거하는 용도로 사용.  
 
-- attributeChangedCallback(attributeName, oldValue, newValue) : Called when an attribute is added, removed, or replaced  
+※ attributeChangedCallback(attributeName, oldValue, newValue) : Called when an attribute is added, removed, or replaced  
 attribute에 변화가 생길 때 호출되는 메소드.  
 attribute는 React의 props와 흡사한 요소.  
 
