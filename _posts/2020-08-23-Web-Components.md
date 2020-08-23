@@ -186,6 +186,9 @@ shadow DOM을 사용해서 UserCard 태그를 가둬놓았기 때문에
 또한, template에서 <slot /> 태그를 사용해서 데이터를 입력할 공간을 마련하고,  
 user-card 태그를 사용할 때 <div slot="">을 사용해서 데이터를 입력해 준 모습을 볼 수 있다.  
 
+![img1](../img/capture1.png)
+![img2](../img/capture2.png)
+
 lifecycle method에다가 event listener를 추가하는 구문을 넣어  
 버튼에다가 interaction을 더해준 모습 또한 볼 수 있다.  
 
