@@ -16,12 +16,13 @@ VanillaJS만으로 페이지 요소들을 Web Components로 분해할 수 있는
 3. HTML Templates
 
 ### Custom elements
-* Create custom HTML tags
+* Create custom HTML tags  
 ```javascript
 // 정의
 class AppDrawer extends HTMLElement { ... }
 window.customElements.define('app-drawer', AppDrawer);
-```
+```  
+
 ```html
 // 사용
 <app-drawer></app-drawer>
@@ -186,5 +187,5 @@ user-card 태그를 사용할 때 <div slot="">을 사용해서 데이터를 입
 lifecycle method에다가 event listener를 추가하는 구문을 넣어  
 버튼에다가 interaction을 더해준 모습 또한 볼 수 있다.  
 
-+ https://randomuser.me API는 임의의 유저 이미지를 가져올 수 있는 API.  
++) https://randomuser.me API는 임의의 유저 이미지를 가져올 수 있는 API.  
 프로토타입을 제작할 때 꽤나 유용하게 사용할 수 있는 api인듯 하다.  
