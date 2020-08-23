@@ -8,7 +8,7 @@ tags:
 ---
 React, Vue 등의 라이브러리나 프레임워크를 사용하지 않고도  
 VanillaJS만으로 페이지 요소들을 Web Components로 분해할 수 있는 기능이 있다.  
-'Custom, Reusable and Encapsulated HTML Tags'라고 소개함.  
+내가 본 유튜브 강좌에선 'Custom, Reusable and Encapsulated HTML Tags'라고 소개함.  
 
 # Web components를 구성하는 3가지 주요 키워드
 1. Custom Elements
@@ -48,22 +48,22 @@ attribute는 React의 props와 흡사한 요소.
 ### Shadow DOM
 * Used for self-contained components
 * Encapsulate styles and markup
-Own entity apart from the regular DOM.
-Styling is separate from the global CSS of the webpage.
+Own entity apart from the regular DOM.  
+Styling is separate from the global CSS of the webpage.  
 
-markup이나 style을 custom element 내부에 encapsulate(캡슐화, 가둬놓음)할 수 있게 해준다.
-보통의 DOM과는 구별되는 별개의 DOM이라고 생각하면 된다.
-그래서, shadow DOM에 별도로 적용한 스타일링은 전체 CSS에 영향을 주지도, 받지도 않는다.
+markup이나 style을 custom element 내부에 encapsulate(캡슐화, 가둬놓음)할 수 있게 해준다.  
+보통의 DOM과는 구별되는 별개의 DOM이라고 생각하면 된다.  
+그래서, shadow DOM에 별도로 적용한 스타일링은 전체 CSS에 영향을 주지도, 받지도 않는다.  
 
-예를 들어, 외부에서 가져온 위젯이 있다고 치자.
-대표적으로 트위터의 follow 버튼.
-이런 것들은 외부에서 가져온 그 상태 그대로의 모양을 유지하기를 바라는 경우가 많다.
-그래서 global styling의 영향을 받으면 안되기 때문에, 이럴 때 encapsulation을 통해
-해당 web component 내부에서만 styling을 적용할 수 있도록 해주는 것이 필요하다.
+예를 들어, 외부에서 가져온 위젯이 있다고 치자.  
+대표적으로 트위터의 follow 버튼.  
+이런 것들은 외부에서 가져온 그 상태 그대로의 모양을 유지하기를 바라는 경우가 많다.  
+그래서 global styling의 영향을 받으면 안되기 때문에, 이럴 때 encapsulation을 통해  
+해당 web component 내부에서만 styling을 적용할 수 있도록 해주는 것이 필요하다.  
 
-이전까지는 iframe 태그를 사용해서 전역 CSS의 영향을 받지 않은 채로 의도된 스타일을 보장할 수 있었는데
-이런 iframe같은 도구에 의존하지 않으면서, 웹 플랫폼에서 기본적으로 encapsulation을
-보장할 수 있는 방법이 바로 shadow DOM이다.
+이전까지는 iframe 태그를 사용해서 전역 CSS의 영향을 받지 않은 채로 의도된 스타일을 보장할 수 있었는데  
+이런 iframe같은 도구에 의존하지 않으면서, 웹 플랫폼에서 기본적으로 encapsulation을  
+보장할 수 있는 방법이 바로 shadow DOM이다.  
 
 * Create with element.attachShadow({ mode : open });
 
@@ -75,7 +75,7 @@ markup이나 style을 custom element 내부에 encapsulate(캡슐화, 가둬놓�
 * Template tag stores markup on page
 (We can later clone or reuse)
 
-템플릿으로 마크업을 저장해놓으면 여러 번 재사용이 가능하다.
+템플릿으로 마크업을 저장해놓으면 여러 번 재사용이 가능하다.  
 
 * Include both HTML and CSS in templates
 
@@ -177,14 +177,14 @@ window.customElements.define('user-card', UserCard);
 </user-card>
 ```
 
-shadow DOM을 사용해서 UserCard 태그를 가둬놓았기 때문에 
-해당 web component의 template에서 적용한 styling은 외부에 적용되지 않는다.
+shadow DOM을 사용해서 UserCard 태그를 가둬놓았기 때문에   
+해당 web component의 template에서 적용한 styling은 외부에 적용되지 않는다.  
 
-또한, template에서 <slot /> 태그를 사용해서 데이터를 입력할 공간을 마련하고,
-user-card 태그를 사용할 때 <div slot="">을 사용해서 데이터를 입력해 준 모습을 볼 수 있다.
+또한, template에서 <slot /> 태그를 사용해서 데이터를 입력할 공간을 마련하고,  
+user-card 태그를 사용할 때 <div slot="">을 사용해서 데이터를 입력해 준 모습을 볼 수 있다.  
 
-lifecycle method에다가 event listener를 추가하는 구문을 넣어
-버튼에다가 interaction을 더해준 모습 또한 볼 수 있다.
+lifecycle method에다가 event listener를 추가하는 구문을 넣어  
+버튼에다가 interaction을 더해준 모습 또한 볼 수 있다.  
 
-+ https://randomuser.me API는 임의의 유저 이미지를 가져올 수 있는 API.
-프로토타입을 제작할 때 꽤나 유용하게 사용할 수 있는 api인듯 하다.
++ https://randomuser.me API는 임의의 유저 이미지를 가져올 수 있는 API.  
+프로토타입을 제작할 때 꽤나 유용하게 사용할 수 있는 api인듯 하다.  
