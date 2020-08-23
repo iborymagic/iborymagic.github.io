@@ -8,11 +8,11 @@ tags:
 ---
 ### Custom Element의 몇 가지 규칙
 1. 사용자 설정 요소의 이름에는 대시(-)가 포함되어야 한다.
-<x-tags>, <my-element>, <my-awesome-app> 등은 모두 유효한 이름이지만
-<tabs>, <foo_bar>는 유효하지 않은 이름이다.
+&lt;x-tags&gt;, &lt;my-element&gt;, &lt;my-awesome-app&gt; 등은 모두 유효한 이름이지만
+&lt;tabs&gt;, &lt;foo_bar&gt;는 유효하지 않은 이름이다.
 일반 HTML 태그 요소와 사용자 설정 요소를 구분하기 위함.
 2. 동일한 태그를 두 번 이상 등록할 수 없다. DOMException이 발생함.
-3. 항상 닫는 태그를 작성해줄 것(<app-drawer></app-drawer>)
+3. 항상 닫는 태그를 작성해줄 것(&lt;app-drawer&gt;&lt;/app-drawer&gt;)
 
 ### 요소 확장
 Custom Elements API는 새로운 HTML 요소를 생성하는 데 유용하다.  
